@@ -159,6 +159,10 @@ body {
 	background-color: var(--primary-color);
 }
 
+.link:focus {
+	outline: none;
+}
+
 .link:focus-visible {
 	outline: 2px auto var(--text-strong);
 	outline-offset: 2px;
