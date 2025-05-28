@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Modified custom CSS Reset by Josh Comeau */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	line-height: calc(1em + 0.5rem);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+p,
+h1 {
+	overflow-wrap: break-word;
+}
+
+p {
+	text-wrap: pretty;
+}
+
+h1 {
+	text-wrap: balance;
+}
+
+li {
+	list-style: none;
+}
+
+ul {
+	padding: 0;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+}
+
+/* General styles */
+
+:root {
+	--primary-color: hsl(166, 69%, 67%);
+	--text-strong: hsl(0, 0%, 100%);
+	--text-weak: hsl(0, 0%, 80%);
+	--fill-strong: hsl(0, 0%, 8%);
+	--fill-mid: hsl(0, 0%, 11%);
+	--fill-weak: hsl(0, 0%, 20%);
+
+	--space-0: 0.75rem; /* 12px */
+	--space-1: 1rem; /* 16px */
+	--space-2: 1.5rem; /* 24px */
+	--space-3: 2rem; /* 32px */
+	--space-4: clamp(1.5rem, 5vw, 2.5rem); /* 24px to 40px */
+
+	--font-sm: 0.875rem; /* 14px */
+	--font-2xl: 1.5rem; /* 24px */
+
+	--border-radius-sm: 8px;
+	--border-radius-md: 12px;
+	--border-radius-extreme: 50%;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	text-align: center;
+	font-size: var(--font-sm);
+	color: var(--text-strong);
+	background-color: var(--fill-strong);
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Card container styles */
+
+.center-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100dvh;
+	margin-inline: var(--space-3);
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: var(--space-2);
+	max-width: 384px;
+	width: 100%;
+	padding: var(--space-4);
+	background-color: var(--fill-mid);
+	border-radius: var(--border-radius-md);
+}
+
+/* Avatar styles */
+
+.avatar {
+	width: 88px;
+	height: 88px;
+}
+
+.avatar img {
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+/* Name and location styles */
+
+.name {
+	font-size: var(--font-2xl);
+	font-weight: 600;
+}
+
+.location {
+	color: var(--primary-color);
+	font-weight: 600;
+}
+
+/* Link container full width */
+
+.dev-info {
+	width: 100%;
+}
+
+/* Title styles */
+
+.dev-title {
+	color: var(--text-weak);
+}
+
+/* Link container styles */
+
+.social-links {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--space-1);
+	margin-top: var(--space-2);
+}
+
+/* Link styles */
+
+.link:link,
+.link:visited {
+	width: 100%;
+	font-weight: 600;
+	padding: var(--space-0);
+	border-radius: var(--border-radius-sm);
+	background-color: var(--fill-weak);
+	transition: none;
+}
+
+.link:hover,
+.link:active {
+	color: var(--fill-weak);
+	background-color: var(--primary-color);
+}
+
+.link:focus-visible {
+	outline: 2px auto var(--text-strong);
+	outline-offset: 2px;
+}
+
+/* Visually hidden snippet taken from Josh Comeau */
+
+.visually-hidden:not(:focus):not(:active) {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+/* Reduced motion styles for accessibility */
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+
+	.link:link,
+	.link:visited {
+		transition: color 0.3s ease, background-color 0.3s ease;
+	}
+}
