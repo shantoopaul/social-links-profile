@@ -159,13 +159,14 @@ body {
 	background-color: var(--primary-color);
 }
 
-.link:focus {
+/* focus styles */
+
+:focus {
 	outline: none;
 }
 
-.link:focus-visible {
-	outline: 2px auto var(--text-strong);
-	outline-offset: 2px;
+:focus-visible {
+	outline: 3px solid var(--text-strong);
 }
 
 /* Visually hidden snippet taken from Josh Comeau */
